@@ -16,12 +16,12 @@ const SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 process.env.NODE_ENV = "development"
   ? (PORT = process.env.DEV_PORT)
-  : (PORT = process.env.PROD_PORT);
+  : (PORT = process.env.NETFLIX_PROD_PORT);
 
 
 //connect to mongodb
 
-const dbURI = process.env.MONGODB_URL;
+const dbURI = process.env.NETFLIX_MONGODB_URL;
 
   mongoose.connect(dbURI, {
     //no options at the moment
