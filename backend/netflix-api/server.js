@@ -7,16 +7,16 @@ const bcrypt = require('bcrypt');
 const User = require('./models/userSchema');
 require("dotenv").config();
 
+let PROD_ENV = process.env.PORT ? "production" : "development";
+const PORT = process.env.PORT || 3030;
+
 
 //connect to express server
 const app = express();
 
-let PORT;
+
 const SECRET_KEY = process.env.JWT_SECRET_KEY;
 
-process.env.NODE_ENV = "development"
-  ? (PORT = process.env.DEV_PORT)
-  : (PORT = process.env.NETFLIX_PROD_PORT);
 
 
 //connect to mongodb
@@ -30,7 +30,7 @@ const dbURI = process.env.NETFLIX_MONGODB_URL;
   .then(() => {
         app.listen(PORT, ()=> {
             console.log(
-              `Server is in ${process.env.status} mode: Connected to port ${PORT} and to MongoDb`
+              `Server is in ${PROD_ENV} mode: Connected to port ${PORT} and to MongoDb`
             );
         }) 
 
