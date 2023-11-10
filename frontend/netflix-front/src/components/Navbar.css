@@ -1,0 +1,18 @@
+
+.nav-netflix-logo {
+  width: 150px;
+  height: 30px;
+}
+
+.link_Styles{
+    text-decoration: none !important;   ;
+    margin-right: 20px;
+}
+
+ul{
+    list-style-type: none
+}
+
+.nav{
+  margin: 5% 5% auto 5%;
+}
