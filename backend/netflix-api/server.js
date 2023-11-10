@@ -5,24 +5,33 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('./models/userSchema');
-const SECRET_KEY = 'secret_key';
+require("dotenv").config();
 
 
 //connect to express server
 const app = express();
 
+let PORT;
+const SECRET_KEY = process.env.JWT_SECRET_KEY;
+
+process.env.NODE_ENV = "development"
+  ? (PORT = process.env.DEV_PORT)
+  : (PORT = process.env.PROD_PORT);
+
+
 //connect to mongodb
 
-const dbURI =
-  "mongodb+srv://nkaunga:Pfo7XqYEid4PFF6d@cluster0.y2uqbpw.mongodb.net/netflix?retryWrites=true&w=majority";
+const dbURI = process.env.MONGODB_URL;
 
   mongoose.connect(dbURI, {
     //no options at the moment
 
   })
   .then(() => {
-        app.listen(3001, ()=> {
-            console.log('Server is connected to port 3001 and to MongoDb');
+        app.listen(PORT, ()=> {
+            console.log(
+              `Server is in ${process.env.status} mode: Connected to port ${PORT} and to MongoDb`
+            );
         }) 
 
   })
