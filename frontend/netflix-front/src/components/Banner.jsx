@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
+
+
   return (
     <>
       <div class="banner-text  justify-content-center">
@@ -21,8 +24,13 @@ const Banner = () => {
               placeholder="Email address"
               required
             />
-            <button type="submit" name="submit" title="submit">
-              Get Started
+            {/* <Link to="/signup" className=" btn btn-lg nav-btn ">
+              <text>Get Started </text>
+            </Link> */}
+            <button type="button" name="submit" title="submit">
+              <Link to="/signup" className=" btn btn-lg  text-white  ">
+                <text>Get Started {'>'} </text>
+              </Link>
             </button>
           </form>
         </div>

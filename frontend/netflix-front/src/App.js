@@ -4,13 +4,13 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Account from './pages/Account';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <div className='app'>
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

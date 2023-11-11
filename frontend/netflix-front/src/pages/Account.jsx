@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+ import Navbar from "../components/Navbar";
+ import "./Auth.css";
 
 const Account = () => {
   return (
-    <div>Account</div>
-  )
+    <>
+      <Navbar />
+      <hr />
+
+      <div>Account</div>
+    </>
+  );
 }
 
 export default Account

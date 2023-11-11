@@ -1,7 +1,7 @@
-
 .nav-netflix-logo {
   width: 150px;
   height: 30px;
+  
 }
 
 .link_Styles{
@@ -10,9 +10,11 @@
 }
 
 ul{
-    list-style-type: none
+    list-style-type: none;
 }
 
 .nav{
-  margin: 5% 5% auto 5%;
+  margin: 0;
+  
 }
+
