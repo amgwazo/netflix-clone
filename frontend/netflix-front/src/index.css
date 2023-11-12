@@ -9,6 +9,7 @@ body {
   background-color: #f3f3f3;
   font-family: "Bebas Neue", "Poppins", sans-serif;
   color: black;
+  overflow-x: hidden;
 }
 
 code { 
@@ -18,8 +19,19 @@ code {
 
 .homepage{
   color: white;
-  background-color: #242222;;
+  background-color: #242222;
   /* background: #f3f3f3; */
+}
+
+.form-buttons{
+  background-color: red;
 }
  
 
+.transparent-bg {
+      background-color: transparent !important;
+}
+
+.black-bg {
+  background-color: black !important;
+}

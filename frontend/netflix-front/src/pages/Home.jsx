@@ -5,13 +5,16 @@ import EnjoyTv from "../components/home/EnjoyTv";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DownloadShows from "../components/home/DownloadShows";
+import Kids from "../components/home/Kids";
+import FaqsAccordion from "../components/home/FaqsAccordion";
+import GetStarted from "../components/home/GetStarted";
 
 const Home = () => {
   return (
     <div className="homepage">
-      <div className="header">
-        <Navbar className="navbar" />
-        <Banner />
+      <div className="header d-flex flex-column">     
+          <Navbar />
+          <Banner />
       </div>
       {/* Enjoy your tv   */}
       <section className="bg-black">
@@ -36,16 +39,38 @@ const Home = () => {
             </p>
           </div>
         </div>
-
       </section>
 
       {/* Kid's Section */}
 
-      <section className="bg-black"></section>
+      <section className="bg-black">
+        <Kids />
+      </section>
 
       {/*  FAQ Section */}
 
-      <section className="bg-black"></section>
+      <section className="bg-black pt-3 pb-3 ps-5">
+        <FaqsAccordion />
+
+        <div class="col-12">
+          <div class="banner-text get-started">
+            <h4>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </h4>
+            <div className="w-100">
+              <form
+                action="#"
+                method="post"
+                aria-label="Sign up or restart your membership with Netflix."
+                className="transparent-bg w-100"
+              >
+                <GetStarted />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/*  Footer */}
       <div className="bg-black mt-2 pt-5 ">

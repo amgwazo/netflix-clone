@@ -1,17 +1,9 @@
-.navbar{
-  z-index: 100;
-}
-
-.home{
-   background-color: black;  
-}
-
-.header {
+.background-image {
   width: 100%;
   min-height: 100vh;
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/background_banner.jpg) ; */
   background-image: url(../images/background_banner.jpg);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
   background-size: cover;
   background-position: center;
@@ -22,13 +14,8 @@
   /* top: 0; */
 }
 
-section {
-  margin-top: 10px;
+.nav {
+    text-decoration: none;
+    float: right;
 
-}
-
-.watch-everywhere {
-  padding-top: 3%;
-  padding-bottom: 3%;
-  padding-left: 40%;
 }
