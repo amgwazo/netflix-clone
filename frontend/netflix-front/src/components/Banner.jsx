@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <>
-      <div class="banner-text">
+      <div className="banner-text">
         <h1>Unlimited movies, TV shows, and more</h1>
         <h3>Watch anywhere. Cancel anytime</h3>
         <h3>

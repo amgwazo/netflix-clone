@@ -9,6 +9,8 @@ import "./App.css";
 import Faq from './pages/Faq';
 
 function App() {
+
+  const isUserSignedIn = !!localStorage.getItem('token');
   return (
     <div className="app">
       {/* <Navbar /> */}
@@ -16,7 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/account" element={<Account />} />
+        {isUserSignedIn && <Route path="/account" element={<Account />} />}
         <Route path="/faq" element={<Faq />} />
       </Routes>
     </div>

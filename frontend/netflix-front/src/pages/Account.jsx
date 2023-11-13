@@ -5,9 +5,10 @@ import React from 'react';
 const Account = () => {
   return (
     <>
-      <Navbar />
-      <hr />
-
+      <div className="d-flex flex-column">
+        <Navbar />
+        <hr />
+      </div>
       <div>Account</div>
     </>
   );

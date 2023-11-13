@@ -29,8 +29,8 @@ const Home = () => {
       {/*  Watch Everywhere Section */}
 
       <section className="bg-black ps-5">
-        <div class="row">
-          <div class="col-7 watch-everywhere">
+        <div className="row">
+          <div className="col-7 watch-everywhere">
             <h2>Watch</h2>
             <h2>everywhere</h2>
             <p>
@@ -52,8 +52,8 @@ const Home = () => {
       <section className="bg-black pt-3 pb-3 ps-5">
         <FaqsAccordion />
 
-        <div class="col-12">
-          <div class="banner-text get-started">
+        <div className="col-12">
+          <div className="banner-text get-started">
             <h4>
               Ready to watch? Enter your email to create or restart your
               membership.

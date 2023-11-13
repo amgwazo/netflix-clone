@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const GetStarted = () => {
   return (
     <div className="d-flex justify-content-center">
-      <input type="text" name="email" placeholder="Email address" w-75 required />
+      <input type="text" name="email" placeholder="Email address" required />
       {/* <Link to="/signup" className=" btn btn-lg nav-btn ">
               <text>Get Started </text>
             </Link> */}
@@ -15,7 +15,7 @@ const GetStarted = () => {
         className=" btn-danger form-buttons"
       >
         <Link to="/signup" className=" btn btn-lg text-white  ">
-          <text>Get Started {">"} </text>
+          <span>Get Started {">"} </span>
         </Link>
       </button>
     </div>

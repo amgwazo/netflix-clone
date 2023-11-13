@@ -6,15 +6,15 @@ import './DownloadShows.css';
 const DownloadShows = () => {
   return (
      
-        <div class="row">
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 download-your-shows">
+        <div className="row">
+          <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 download-your-shows">
             <h2>Download your shows to watch offline</h2>
             <p>
               Save your favorites easily and always have something to watch.
             </p>
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 download-your-shows-img">
+          <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 download-your-shows-img">
             <Image
               src={feature2}
               alt="feature 2"
