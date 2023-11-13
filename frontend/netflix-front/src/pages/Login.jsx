@@ -69,7 +69,7 @@ const handleLogin = async (event) => {
           setUsername("");
           fetchUsers();
           navigate("/account");
-          window.location.reload();
+          // window.location.reload();
           localStorage.setItem('token', token);
        
     } catch (error) {
