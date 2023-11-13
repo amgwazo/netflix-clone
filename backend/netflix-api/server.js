@@ -8,7 +8,7 @@ const User = require('./models/userSchema');
 require("dotenv").config();
 
 let PROD_ENV = process.env.PORT ? "production" : "development";
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3001;
 
 
 //connect to express server
@@ -36,7 +36,7 @@ const dbURI = process.env.NETFLIX_MONGODB_URL;
 
   })
   .catch((error) => {
-    console.log('Unable to connect to: ' + error.message);
+    console.log('Unable to connect to Database Server: ' + error.message);
   }
   );
 
@@ -60,7 +60,8 @@ app.post('/register', async (req, res) => {
 
     }catch(error){
 
-        res.status(500).json({ error: 'Error Signing Up: ' +  error.message });
+        console.log(error.message);
+        res.status(500).send({ error: "Error Signing Up: " + error.message });
 
     }
     
@@ -83,6 +84,7 @@ app.get('/register', async(req, res) => {
 app.post('/login', async (req, res) => {
     try{
         const {username, password} = req.body;
+        const email = '';
         const user = await User.findOne({username});
         if(!user){
             return res.status(401).json({error: 'Invalid Credentials'})
@@ -93,8 +95,9 @@ app.post('/login', async (req, res) => {
         if(!isPasswordValid){
             return res.status(401).json({error: 'Invalid credentials'});
         }
-        const token = jwt.sign({ userId: user._id}, SECRET_KEY, {expiresIn: '1hr'});
-        res.status(200).json({message: 'Login successful'});
+        const token = jwt.sign({ userId: user._id, username}, SECRET_KEY, {expiresIn: '1hr'});
+        // res.status(200).json({message: 'Login successful'});
+        res.status(200).json({token});
 
     }catch(error){
         res.status(500).json({error: 'Login error: ' + error.message});
