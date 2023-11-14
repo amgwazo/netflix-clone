@@ -15,7 +15,7 @@ let apiURL = process.env.REACT_APP_BASE_URL_DEV;
 //"http://localhost:3001/api";
 
 if (process.env.NODE_ENV === "production") {
-  apiURL = process.env.BASE_URL_PROD; 
+  apiURL = process.env.REACT_APP_BASE_URL_PROD; 
   //"https://netflix-clone-opav.onrender.com/api";
 }
 
