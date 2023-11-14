@@ -10,11 +10,16 @@ import Image from "react-bootstrap/Image";
 import "./Login.css";
 import Footer from "../components/Footer";
 
-let apiURL = "http://localhost:3001";
+
+let apiURL = process.env.REACT_APP_BASE_URL_DEV;
+//"http://localhost:3001/api";
 
 if (process.env.NODE_ENV === "production") {
-  apiURL = "https://netflix-clone-opav.onrender.com";
+  apiURL = process.env.BASE_URL_PROD; 
+  //"https://netflix-clone-opav.onrender.com/api";
 }
+
+// console.log(apiURL);
 
 const Login = () => {
 

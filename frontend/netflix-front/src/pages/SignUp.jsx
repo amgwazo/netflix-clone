@@ -5,11 +5,17 @@ import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-let apiURL = "http://localhost:3001/register";
+
+let apiURL = process.env.REACT_APP_BASE_URL_DEV  + "/register";
+//"http://localhost:3001/api";
 
 if (process.env.NODE_ENV === "production") {
-  apiURL = "https://netflix-clone-opav.onrender.com/register";
+  apiURL = process.env.BASE_URL_PROD + "/register";
+  //"https://netflix-clone-opav.onrender.com/api";
 }
+
+console.log(apiURL);
+
 
 
 const SignUp = () => {

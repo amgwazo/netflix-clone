@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Button, Nav } from "react-bootstrap";
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../images/logo.png';
 import Image from "react-bootstrap/Image";
+import { Nav } from 'react-bootstrap';
 
 const Navbar = () => {
   const isUserSignedIn = !!localStorage.getItem('token');
