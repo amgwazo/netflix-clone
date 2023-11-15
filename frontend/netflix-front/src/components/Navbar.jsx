@@ -7,6 +7,9 @@ import { Nav } from 'react-bootstrap';
 
 const Navbar = () => {
   const isUserSignedIn = !!localStorage.getItem('token');
+  
+  console.log(isUserSignedIn + ' in Navbar');
+
   const navigate = useNavigate();
 
   const handleSignOut = () => {

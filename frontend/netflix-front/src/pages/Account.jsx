@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Account = () => {
   const isUserSignedIn = !!localStorage.getItem("token");
+  console.log(isUserSignedIn + ' in Account Page');
   const navigate = useNavigate();
 
   // Redirect to login if user is not authenticated

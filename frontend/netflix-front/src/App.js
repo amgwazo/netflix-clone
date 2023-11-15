@@ -11,6 +11,7 @@ import Faq from './pages/Faq';
 function App() {
 
   const isUserSignedIn = !!localStorage.getItem('token');
+  console.log(isUserSignedIn + ' in App.js');
   return (
     <div className="app">
       {/* <Navbar /> */}
