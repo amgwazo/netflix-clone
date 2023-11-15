@@ -73,8 +73,8 @@ const Login = () => {
       localStorage.setItem("token", token);
       // window.location.reload();
 
-      navigate("/account");
-      // navigate("/");
+      // navigate("/account");
+      navigate("/");
       window.location.reload();
     } catch (error) {
       alert(`${JSON.stringify(error.response.data.error)}`);
