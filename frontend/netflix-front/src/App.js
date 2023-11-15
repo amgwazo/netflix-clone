@@ -19,7 +19,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {isUserSignedIn && <Route path="/account" element={<Account />} />}
+        <Route path="/account" element={<Account />} />
+        {/* {isUserSignedIn && <Route path="/account" element={<Account />} />} */}
         <Route path="/faq" element={<Faq />} />
       </Routes>
     </div>
