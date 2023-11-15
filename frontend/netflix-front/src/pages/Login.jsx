@@ -1,6 +1,6 @@
-import React , {useState, useEffect} from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import { Button, Form, Nav } from "react-bootstrap";
@@ -10,79 +10,74 @@ import Image from "react-bootstrap/Image";
 import "./Login.css";
 import Footer from "../components/Footer";
 
-
 let apiURL = process.env.REACT_APP_BASE_URL_DEV;
 //"http://localhost:3001/api";
 
 if (process.env.NODE_ENV === "production") {
-  apiURL = process.env.REACT_APP_BASE_URL_PROD; 
+  apiURL = process.env.REACT_APP_BASE_URL_PROD;
   //"https://netflix-clone-opav.onrender.com/api";
 }
 
 // console.log(apiURL);
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  // const email = '';
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    fetchUsers();
+  });
 
-const [username, setUsername] = useState('');
-const [password, setPassword] = useState('');
-// const email = '';
-const navigate = useNavigate();
+  const fetchUsers = () => {
+    axios
+      .get(apiURL + "/register")
+      .then((res) => {
+        // axios.get("https://netflix-clone-opav.onrender.com/register").then((res) => {
+        // axios.get('http://localhost:3001/register').then((res) =>{
+        console.log(res.data);
+        // setUsers(res.data);
+      })
+      .catch((error) => {
+        if (error.response) {
+          // Request made but the server responded with an error
+          alert("Fetch Data Error: " + error.response.data);
+        } else if (error.request) {
+          // Request made but no response is received from the server.
+          alert("No Response Error: " + error.message);
+        } else {
+          // Error occurred while setting up the request
+          alert("Fetch Data Error: " + error.message);
+        }
+      });
+  };
 
-useEffect(() => {
-  fetchUsers();
-})
-
-const fetchUsers = () =>{
-
-      axios
-        .get(apiURL + "/register")
-        .then((res) => {
-          // axios.get("https://netflix-clone-opav.onrender.com/register").then((res) => {
-          // axios.get('http://localhost:3001/register').then((res) =>{
-          console.log(res.data);
-          // setUsers(res.data);
-        })
-        .catch((error) => {
-          if (error.response) {
-            // Request made but the server responded with an error
-            alert("Fetch Data Error: " + error.response.data);
-          } else if (error.request) {
-            // Request made but no response is received from the server.
-            alert("No Response Error: " + error.message);
-          } else {
-            // Error occurred while setting up the request
-            alert("Fetch Data Error: " + error.message);
-          }
-        });
-   
-  
-}
-
-const handleLogin = async (event) => {
-  event.preventDefault();
+  const handleLogin = async (event) => {
+    event.preventDefault();
 
     try {
-      const response = await axios
-        .post(apiURL + '/login', { username, password })
-          
-        const token = response.data.token;
-        alert('Login Successful.')
-        
-    // alert(`${JSON.stringify(token)}`); 
-          setPassword("");
-          setUsername("");
-          fetchUsers();
-          navigate("/account");
-          // window.location.reload();
-          localStorage.setItem('token', token);
-       
+      const response = await axios.post(apiURL + "/login", {
+        username,
+        password,
+      });
+
+      const token = response.data.token;
+
+      alert("Login Successful.");
+
+      // alert(`${JSON.stringify(token)}`);
+      setPassword("");
+      setUsername("");
+      fetchUsers();
+      // window.location.reload();
+      localStorage.setItem("token", token);
+
+      navigate("/account");
     } catch (error) {
-
-      alert(`${JSON.stringify(error.response.data.error)}`); 
+      alert(`${JSON.stringify(error.response.data.error)}`);
     }
-}
-
+  };
 
   return (
     <>

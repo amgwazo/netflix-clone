@@ -1,8 +1,17 @@
-import React from 'react';
- import Navbar from "../components/Navbar";
- import "./Auth.css";
+import React from "react";
+import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Account = () => {
+  const isUserSignedIn = !!localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  // Redirect to login if user is not authenticated
+  if (!isUserSignedIn) {
+    navigate("/login");
+    return null; // Render nothing if redirecting
+  }
+
   return (
     <>
       <div className="d-flex flex-column">
@@ -12,6 +21,24 @@ const Account = () => {
       <div>Account</div>
     </>
   );
-}
+};
 
-export default Account
+export default Account;
+
+// import React from 'react';
+//  import Navbar from "../components/Navbar";
+//  import "./Auth.css";
+
+// const Account = () => {
+//   return (
+//     <>
+//       <div className="d-flex flex-column">
+//         <Navbar />
+//         <hr />
+//       </div>
+//       <div>Account</div>
+//     </>
+//   );
+// }
+
+// export default Account
