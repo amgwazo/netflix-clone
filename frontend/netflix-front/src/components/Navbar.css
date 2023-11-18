@@ -1,3 +1,7 @@
+*{
+  z-index: 100;
+}
+
 .nav-netflix-logo {
   width: 150px;
   height: 30px;

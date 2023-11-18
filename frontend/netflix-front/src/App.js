@@ -7,6 +7,8 @@ import Account from './pages/Account';
 // import Navbar from './components/Navbar';
 import "./App.css";
 import Faq from './pages/Faq';
+import Videos from './pages/Videos';
+// import { Navbar } from 'react-bootstrap';
 
 function App() {
 
@@ -15,14 +17,18 @@ function App() {
   return (
     <div className="app">
       {/* <Navbar /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/account" element={<Account />} />
-        {/* {isUserSignedIn && <Route path="/account" element={<Account />} />} */}
-        <Route path="/faq" element={<Faq />} />
-      </Routes>
+      <div>
+        {/* <Navbar /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/videos" element={<Videos />} />
+          {/* {isUserSignedIn && <Route path="/account" element={<Account />} />} */}
+          <Route path="/faq" element={<Faq />} />
+        </Routes>
+      </div>
     </div>
   );
 }
