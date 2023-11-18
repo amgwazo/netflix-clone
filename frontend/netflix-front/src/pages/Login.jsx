@@ -64,7 +64,7 @@ const Login = () => {
 
       const token = response.data.token;
 
-      alert("Login Successful.");
+      // alert("Login Successful.");
 
       // alert(`${JSON.stringify(token)}`);
       setPassword("");
@@ -76,7 +76,7 @@ const Login = () => {
       
       // navigate("/");
       navigate("/videos");
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       alert(`${JSON.stringify(error.response.data.error)}`);
     }
