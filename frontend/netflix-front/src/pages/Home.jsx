@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import Banner from "../components/Banner";
+import Banner from "../components/home/Banner";
 import EnjoyTv from "../components/home/EnjoyTv";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,9 +12,9 @@ import GetStarted from "../components/home/GetStarted";
 const Home = () => {
   return (
     <div className="homepage">
-      <div className="header d-flex flex-column">     
-          <Navbar />
-          <Banner />
+      <div className="header d-flex flex-column pt-5">
+        <Navbar />
+        <Banner />
       </div>
       {/* Enjoy your tv   */}
       <section className="bg-black">

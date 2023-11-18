@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 // import { Link } from 'react-router-dom';
-import './Banner.css';
-import GetStarted from './home/GetStarted';
+import "./Banner.css";
+import GetStarted from "./GetStarted";
 
 const Banner = () => {
-
-
   return (
     <>
       <div className="banner-text">
@@ -14,10 +12,7 @@ const Banner = () => {
         <h3>
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
-        <div className='w-100'>
-
-          
-
+        <div className="w-100">
           <form
             action="#"
             method="post"
@@ -44,6 +39,6 @@ const Banner = () => {
       </div>
     </>
   );
-}
+};
 
-export default Banner
+export default Banner;

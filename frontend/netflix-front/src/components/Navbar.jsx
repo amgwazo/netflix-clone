@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem('token');
+    console.log(isUserSignedIn);
     navigate('/login');
 
   }
@@ -21,10 +22,10 @@ const Navbar = () => {
   return (
     <Nav className="d-flex justify-content-between ">
       <Link to="/">
-        <Image className="nav-netflix-logo m-5" src={logo} alt="Netflix logo" />
+        <Image className="nav-netflix-logo ms-5 mt-3 mb-0 pb-0" src={logo} alt="Netflix logo" />
       </Link>
 
-      <ul className="d-flex m-5">
+      <ul className="d-flex me-5 mt-3 mb-0 pb-2">
         {isUserSignedIn ? (
           <>
             <Link
