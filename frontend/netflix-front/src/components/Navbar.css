@@ -7,6 +7,20 @@
   height: 30px;
   
 }
+.nav-buttons{
+  margin-left: 5px;
+}
+
+.nav-button{
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 0.6rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    text-decoration: none;
+}
 
 .link_Styles{
     text-decoration: none !important;   ;

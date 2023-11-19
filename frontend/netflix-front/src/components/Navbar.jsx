@@ -18,9 +18,29 @@ const Navbar = () => {
 
   return (
     <Nav className="d-flex justify-content-between ">
-      <Link to="/">
-        <Image className="nav-netflix-logo ms-5 mt-3 mb-0 pb-0" src={logo} alt="Netflix logo" />
-      </Link>
+      <div className="d-flex">
+        <Link to="/videos">
+          <Image
+            className="nav-netflix-logo ms-5 mt-3 mb-0 pb-0"
+            src={logo}
+            alt="Netflix logo"
+          />
+        </Link>
+        {isUserSignedIn ? (
+          <div className=" d-flex nav-buttons ms-5">
+            <Link to="/" className=" nav-button m-2">
+              <li> Home</li>
+            </Link>
+            <Link to="/videos" className=" nav-button  m-2">
+              <li> TV Shows</li>
+            </Link>
+            <Link to="/videos" className=" nav-button m-2">
+              <li> Movies</li>
+            </Link>
+          </div>
+        ) : null}
+        
+      </div>
 
       <ul className="d-flex me-5 mt-3 mb-0 pb-2">
         {isUserSignedIn ? (
