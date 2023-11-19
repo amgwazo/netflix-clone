@@ -11,9 +11,6 @@ import Videos from './pages/Videos';
 // import { Navbar } from 'react-bootstrap';
 
 function App() {
-
-  const isUserSignedIn = !!localStorage.getItem('token');
-  console.log(isUserSignedIn + ' in App.js');
   return (
     <div className="app">
       {/* <Navbar /> */}

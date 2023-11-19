@@ -34,8 +34,6 @@ const Login = () => {
     axios
       .get(apiURL + "/register")
       .then((res) => {
-        // axios.get("https://netflix-clone-opav.onrender.com/register").then((res) => {
-        // axios.get('http://localhost:3001/register').then((res) =>{
         console.log(res.data);
         // setUsers(res.data);
       })

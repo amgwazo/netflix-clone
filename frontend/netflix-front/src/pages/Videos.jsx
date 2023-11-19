@@ -6,12 +6,10 @@ import './Videos.css';
 
 const Videos = () => {
  const isUserSignedIn = !!localStorage.getItem("token");
- console.log(isUserSignedIn + " in Account Page");
  const navigate = useNavigate();
 
  // Redirect to login if user is not authenticated
  if (!isUserSignedIn) {
-  console.log(isUserSignedIn + " : user is signed out");
    navigate("/login");
   //  return null; // Render nothing if redirecting
  }
@@ -20,15 +18,8 @@ const Videos = () => {
    process.env.REACT_APP_TMDB_API_END_POINT +
    "api_key=" +
    process.env.REACT_APP_TMDB_API_KEY;
- console.log(tmdbUrl);
- console.log(process.env.REACT_APP_TMDB_API_END_POINT);
- console.log(process.env.REACT_APP_TMDB_API_KEY)
 
  const [movieList, setMovieList] = useState([]);
-
-
-
-  console.log(movieList);
 
   useEffect(() => {
     const getMovie = () => {
@@ -41,7 +32,7 @@ const Videos = () => {
 
   return (
     <>
-      <div className="h-100">
+      <div className="h-100 bg-black">
         <div className="nav-bar d-flex flex-column bg-black  ">
           <Navbar />
           {/* <hr /> */}
