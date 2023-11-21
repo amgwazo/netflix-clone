@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import Accordion from "../components/home/Accordion";
 
 const Account = () => {
   const isUserSignedIn = !!localStorage.getItem("token");
@@ -19,7 +20,8 @@ const Account = () => {
         <Navbar />
         <hr />
       </div>
-      <div>Account</div>
+      <div className="mb-3">Account</div>
+      {/* <Accordion header='Me' detail='mine'/> */}
     </>
   );
 };
